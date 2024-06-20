@@ -2,27 +2,29 @@
 import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.astro";
 
-export async function getStaticPaths(){
+export async function getStaticPaths() {
     return [
-        {params: {header: 'carac'}},
-        {params: {header: 'precios'}},
-        {params: {header: 'sobre-nosotros'}},
+        { params: { rutas: 'carac' } },
+        { params: { rutas: 'precios' } },
+        { params: { rutas: 'sobre-nosotros' } },
     ];
-
-
 }
-   
+
+
+
     
-const {header}=Astro.params
+const {rutas}=Astro.params
 ---
 
-<Base title = `${header}` >
+<Base title = `${rutas}` >
     <section class="h-screen flex justify-center ">
       
-      <Header title={header}/>
+      <Header title={rutas}/>
       
      
     </section>
 
   
 </Base>
+
+
