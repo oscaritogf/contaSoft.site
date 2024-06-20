@@ -1,0 +1,28 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+
+export async function getStaticPaths(){
+    return [
+        {params: {header: 'carac'}},
+        {params: {header: 'precios'}},
+        {params: {header: 'sobre-nosotros'}},
+    ];
+
+
+}
+   
+    
+const {header}=Astro.params
+---
+
+<Base title = `${header}` >
+    <section class="h-screen flex justify-center ">
+      
+      <Header title={header}/>
+      
+     
+    </section>
+
+  
+</Base>
